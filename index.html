@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p-text"></p>
+    <button onclick="usingSimpleFunction()">Using Simple Function</button>
+    <button id="direct-event">Direct Add Event</button>
+    <input type="text" name="" id="text-input">
+    <button id="submit">Submit</button>
+    <script>
+        function usingSimpleFunction(){
+            const pText = document.getElementById('p-text');
+            pText.innerText = 'This is my paragraph Text';
+        };
+
+        document.getElementById('direct-event').addEventListener('click',function(){
+            const pText = document.getElementById('p-text');
+            pText.innerText = 'I Love JavaScript';
+        });
+
+        document.getElementById('submit').addEventListener('click',function(){
+            const textInput = document.getElementById('text-input');
+            const inputValue = textInput.value;
+            console.log(inputValue);
+            const pText = document.getElementById('p-text');
+            pText.innerText = inputValue; 
+        })
+    </script>
+</body>
+</html>
